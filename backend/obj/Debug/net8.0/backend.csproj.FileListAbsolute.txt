@@ -31,3 +31,4 @@ C:\Users\Moses\Documents\Projects\flip-flip\backend\obj\Debug\net8.0\refint\back
 C:\Users\Moses\Documents\Projects\flip-flip\backend\obj\Debug\net8.0\backend.pdb
 C:\Users\Moses\Documents\Projects\flip-flip\backend\obj\Debug\net8.0\backend.genruntimeconfig.cache
 C:\Users\Moses\Documents\Projects\flip-flip\backend\obj\Debug\net8.0\ref\backend.dll
+C:\Users\Moses\Documents\Projects\flip-flip\backend\obj\Debug\net8.0\backend.sourcelink.json

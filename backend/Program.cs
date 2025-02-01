@@ -10,7 +10,11 @@ builder.Services.AddSwaggerGen();
 // services DI (Dependency Injection)
 builder.Services.AddScoped<FolderService>();
 
+builder.Services.AddControllers();
+
 var app = builder.Build();
+
+app.MapControllers();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -25,14 +29,6 @@ var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
-
-app.MapGet("/folders", async (FolderService folderService) =>
-{
-    var folders = await folderService.GetFolders();
-    return Results.Ok(folders);
-})
-.WithName("GetFolders")
-.WithOpenApi();
 
 app.MapGet("/weatherforecast", () =>
 {
