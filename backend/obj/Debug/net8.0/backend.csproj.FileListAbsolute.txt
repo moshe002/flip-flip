@@ -32,3 +32,6 @@ C:\Users\Moses\Documents\Projects\flip-flip\backend\obj\Debug\net8.0\backend.pdb
 C:\Users\Moses\Documents\Projects\flip-flip\backend\obj\Debug\net8.0\backend.genruntimeconfig.cache
 C:\Users\Moses\Documents\Projects\flip-flip\backend\obj\Debug\net8.0\ref\backend.dll
 C:\Users\Moses\Documents\Projects\flip-flip\backend\obj\Debug\net8.0\backend.sourcelink.json
+C:\Users\Moses\Documents\Projects\flip-flip\backend\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Moses\Documents\Projects\flip-flip\backend\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Moses\Documents\Projects\flip-flip\backend\bin\Debug\net8.0\Npgsql.dll

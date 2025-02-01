@@ -1,4 +1,5 @@
 using backend.Services;
+using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +9,16 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // services DI (Dependency Injection)
+builder.Services.AddSingleton<NpgsqlConnection>
+    (
+        sp => {
+            var config = sp.GetRequiredService<IConfiguration>();
+            var connectionString = config.GetConnectionString("DefaultConnection");
+            return new NpgsqlConnection(connectionString);
+        }
+    );
 builder.Services.AddScoped<FolderService>();
+builder.Services.AddScoped<DatabaseService>();
 
 builder.Services.AddControllers();
 
