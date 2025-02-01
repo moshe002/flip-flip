@@ -9,7 +9,7 @@ namespace backend.Services
 
         public DatabaseService(NpgsqlConnection connection, ILogger<DatabaseService> logger)
         {
-            _connection = connection;
+            _connection = connection ?? throw new ArgumentNullException(nameof(connection));
             _logger = logger;
         }
 

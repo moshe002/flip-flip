@@ -8,15 +8,23 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var config = builder.Configuration;
+var connectionString = config.GetConnectionString("DefaultConnection");
+
+// Debug output
+Console.WriteLine($"🔍 Retrieved Connection String: {connectionString}");
+
+if (string.IsNullOrEmpty(connectionString))
+{
+    throw new Exception("Database connection string is missing or empty.");
+}
+
 // services DI (Dependency Injection)
-builder.Services.AddSingleton<NpgsqlConnection>
-    (
-        sp => {
-            var config = sp.GetRequiredService<IConfiguration>();
-            var connectionString = config.GetConnectionString("DefaultConnection");
-            return new NpgsqlConnection(connectionString);
-        }
-    );
+builder.Services.AddSingleton<NpgsqlConnection>(_ =>
+{
+    return new NpgsqlConnection(connectionString);
+});
+    
 builder.Services.AddScoped<FolderService>();
 builder.Services.AddScoped<DatabaseService>();
 
